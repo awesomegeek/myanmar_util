@@ -1,7 +1,13 @@
 [package]
-name = "myanmar_tools"
+name = "myanmar_util"
 version = "0.1.0"
 edition = "2024"
+description = "A collection of tools for processing Myanmar text including syllable breaking and other utilities"
+authors = ["Naing Tun Win"]
+license = "MIT"
+repository = "https://github.com/awesomegeek/myanmar_util"
+keywords = ["myanmar", "burmese", "nlp", "text-processing"]
+categories = ["text-processing"]
 
 [dependencies]
 clap = { version = "4.5.37", features = ["derive"] }

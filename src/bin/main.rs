@@ -1,5 +1,5 @@
 use clap::{Parser, Subcommand};
-use myanmar_tools::{syllable_break, syllable_break_phoneme};
+use myanmar_util::{syllable_break, syllable_break_phoneme};
 use std::fs::{self, File};
 use std::io::{self, Write};
 use std::path::PathBuf;
