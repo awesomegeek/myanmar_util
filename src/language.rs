@@ -56,7 +56,7 @@ fn break_syllables(line: &str, break_pattern: &Regex, separator: &str) -> String
         .join(" ");
 
     // Apply the break pattern
-    let segmented_line = break_pattern.replace_all(&line, format!("{} {}", separator, "$1"));
+    let segmented_line = break_pattern.replace_all(&line, format!("{}{}", separator, "$1"));
 
     // Remove leading delimiter if it exists
     let segmented_line = if segmented_line.starts_with(separator) {
@@ -72,9 +72,9 @@ fn break_syllables(line: &str, break_pattern: &Regex, separator: &str) -> String
     segmented_line
 }
 
-pub fn syllable_break(text: &str, break_type: SyllableBreakType) -> String {
+pub fn syllable_break(text: &str, separator: Option<&str>, break_type: SyllableBreakType ) -> String {
     let break_pattern = create_break_pattern();
-    let separator = "|";
+    let separator = separator.unwrap_or("|");
 
     // Apply explode_patsint only for Phoneme breaking
     let input = match break_type {
